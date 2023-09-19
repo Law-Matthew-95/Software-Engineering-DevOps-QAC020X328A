@@ -36,6 +36,8 @@ def delete_user():
     if user:
         if user.isAdmin:
             flash('Cannot delete an admin.', category='error')
+        elif user.id == current_user.id:
+            flash('Cannot delete yourself.', category='error')
         else:
             db.session.delete(user)
             db.session.commit()
