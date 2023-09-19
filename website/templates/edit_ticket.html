@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Edit Ticket{% endblock %} {% block
+content %}
+<h1 align="center">Ticket</h1>
+<form method="POST" action="/edit_ticket_check">
+  <input type="hidden" name="ticket.user_id" value="{{ticket.user_id}}" />
+  <input type="hidden" name="ticket.id" value="{{ticket.id}}" />
+  <h3>Subject</h3>
+  <textarea name="subject" id="subject" class="form-control">
+{{ticket.subject}}</textarea
+  >
+  <h3>Description</h3>
+  <textarea name="description" id="description" class="form-control">
+{{ticket.description}}</textarea
+  >
+  <br />
+  <h3>Status</h3>
+  <textarea name="status" id="status" class="form-control">
+{{ticket.status}}</textarea
+  >
+  <br />
+  <div align="center">
+    <div class="col" >
+    <button type="button" class="btn btn-secondary" onclick="window.history.back()">Back</button>
+    <button type="submit" class="btn btn-primary">Edit Ticket</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

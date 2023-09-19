@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<form method="POST">
+  <br />
+  <h3 align="center">Sign Up</h3>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter email"
+      class="form-control"
+      id="email"
+      aria-describedby="emailHelp"
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    ><br />
+  </div>
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    <input
+      type="text"
+      name="first_name"
+      placeholder="Enter First Name"
+      class="form-control"
+      id="first_name"
+    /><br />
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input
+      type="text"
+      name="last_name"
+      placeholder="Enter Last Name"
+      class="form-control"
+      id="last_name"
+    /><br />
+  </div>
+  <div class="form-group">
+    <label for="password1">Password </label>
+    <input
+      type="password"
+      name="password1"
+      placeholder="Enter Password"
+      class="form-control"
+      id="password1"
+    /><br />
+  </div>
+  <div class="form-group">
+    <label for="password2">Password (Confirm) </label>
+    <input
+      type="password"
+      name="password2"
+      placeholder="Confirm Password"
+      class="form-control"
+      id="password2"
+    /><br />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

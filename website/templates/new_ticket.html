@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %}New Ticket{% endblock %} {% block
+content %}
+<h1 align="center">Tickets</h1>
+<form method="POST">
+  <h3>Subject</h3>
+  <textarea name="subject" id="subject" class="form-control"></textarea>
+  <h3>Description</h3>
+  <textarea name="description" id="description" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Ticket</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block title %}Users{% endblock %} {% block content
+%}
+<h1 align="center">Users</h1>
+<ul class="list-group list-group-fluah" id="users">
+  {% for user1 in users %}
+  <li class="list-group-item">
+    Name: {{ user1.first_name + " " + user1.last_name }}<br />
+    Email: {{ user1.email }}<br />
+    Admin: {{ user1.isAdmin }} <br />
+    <br />
+    <div class="col">
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#deleteUserModal{{user1.id}}"
+      >
+        <span aria-hidden="true">Delete User</span>
+      </button>
+      <div
+        class="modal fade"
+        id="deleteUserModal{{user1.id}}"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Confirm Deletion
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete the user {{ user1.first_name + " "
+              + user1.last_name}}?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="deleteUser({{user1.id}})"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-warning"
+        onclick="createAdmin({{user1.id}})"
+      >
+        <span aria-hidden="true">Make User Admin</span>
+      </button>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

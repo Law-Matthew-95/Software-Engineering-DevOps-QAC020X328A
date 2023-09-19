@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1 align="center">My Tickets</h1>
+<ul class="list-group list-group-fluah" id="tickets">
+  {% for ticket in user.tickets %}
+  <form action="/edit-ticket" method="POST">
+    <li class="list-group-item">
+      Subject: {{ ticket.subject }}<br />
+      Description: {{ ticket.description }}<br />
+      Date Added: {{ ticket.date }} <br />
+      Status: {{ ticket.status }}
+      <br />
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteTicketModal{{ticket.id}}"
+        >
+          <span aria-hidden="true">Delete Ticket</span>
+        </button>
+        <div
+          class="modal fade"
+          id="deleteTicketModal{{ticket.id}}"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Confirm Deletion
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete this ticket?
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="deleteTicket({{ticket.id}})"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-warning"
+          value="{{ticket.id}}"
+          name="editTicket"
+        >
+          <span aria-hidden="true">Edit Ticket</span>
+        </button>
+      </div>
+    </li>
+  </form>
+  {% endfor %}
+</ul>
+{% endblock %}
