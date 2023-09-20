@@ -15,8 +15,7 @@
           type="button"
           class="btn btn-danger"
           data-bs-toggle="modal"
-          data-bs-target="#deleteTicketModal{{ticket.id}}"
-        >
+          data-bs-target="#deleteTicketModal{{ticket.id}}">
           <span aria-hidden="true">Delete Ticket</span>
         </button>
         <div
@@ -26,8 +25,7 @@
           data-bs-keyboard="false"
           tabindex="-1"
           aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
+          aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
@@ -38,8 +36,7 @@
                   type="button"
                   class="btn-close"
                   data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
+                  aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 Are you sure you want to delete this ticket?
@@ -48,15 +45,13 @@
                 <button
                   type="button"
                   class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
+                  data-bs-dismiss="modal">
                   Close
                 </button>
                 <button
                   type="button"
                   class="btn btn-primary"
-                  onclick="deleteTicket({{ticket.id}})"
-                >
+                  onclick="deleteTicket({{ticket.id}})">
                   Confirm
                 </button>
               </div>
@@ -67,8 +62,7 @@
           type="submit"
           class="btn btn-warning"
           value="{{ticket.id}}"
-          name="editTicket"
-        >
+          name="editTicket">
           <span aria-hidden="true">Edit Ticket</span>
         </button>
       </div>

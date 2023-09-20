@@ -13,6 +13,7 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html", user=current_user)
 
+
 @views.route('/delete-ticket', methods=['POST'])
 def delete_ticket():
     ticket = json.loads(request.data)

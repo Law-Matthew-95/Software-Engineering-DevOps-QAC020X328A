@@ -7,24 +7,20 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <title>{% block title %}Home{% endblock %}</title>
   </head>
@@ -35,60 +31,61 @@
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbar"
-      >
+        data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
           {% if user.isAdmin and user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
-          <a class="nav-item nav-link" id="logout" data-bs-toggle="modal" data-bs-target="#Logout">Logout</a>
+          <a
+            class="nav-item nav-link"
+            id="logout"
+            data-bs-toggle="modal"
+            data-bs-target="#Logout"
+            >Logout</a
+          >
           <div
-          class="modal fade"
-          id="Logout"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                  Confirm Deletion
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                Are you sure you want to Logout?
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  onclick="window.location.href='/logout'"
-                >
-                  Confirm
-                </button>
+            class="modal fade"
+            id="Logout"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Confirm Deletion
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to Logout?</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="window.location.href='/logout'">
+                    Confirm
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-          <a class="nav-item nav-link" id="newticket" href="/new-ticket">New Ticket</a>
+          <a class="nav-item nav-link" id="newticket" href="/new-ticket"
+            >New Ticket</a
+          >
           <a class="nav-item nav-link" id="users" href="/users">Users</a>
           <a class="nav-item nav-link" id="alltickets" href="/all-tickets"
             >All Tickets</a
@@ -116,8 +113,7 @@
         type="button"
         class="close"
         data-dismiss="alert"
-        aria-label="Close"
-      >
+        aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -128,8 +124,7 @@
         type="button"
         class="close"
         data-dismiss="alert"
-        aria-label="Close"
-      >
+        aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -139,21 +134,17 @@
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       type="text/javascript"
-      src="{{ url_for('static', filename='index.js') }}"
-    ></script>
+      src="{{ url_for('static', filename='index.js') }}"></script>
   </body>
 </html>
