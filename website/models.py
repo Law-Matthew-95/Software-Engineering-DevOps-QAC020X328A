@@ -2,6 +2,7 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+# Ticket table
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True) # primary key
     subject = db.Column(db.String(1000000)) # ticket subject
@@ -11,6 +12,7 @@ class Ticket(db.Model):
     status = db.Column(db.String(1000000)) # status of the ticket
     requester = db.Column(db.String(1000000)) # requester of the ticket
 
+# User table
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True) # primary key
     email = db.Column(db.String(150), unique=True) # unique email
