@@ -137,7 +137,7 @@ def sign_up():
         elif len(last_name) < 2:
             flash('Last name must be greater than 1 character.', category='error')
         elif password1 != password2:
-            flash('Passwords don\'t match.', category='error')
+            flash('Passwords do not match.', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         # if there are no admins, the user will be made an admin
