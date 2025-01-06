@@ -142,7 +142,7 @@ def sign_up():
             flash('Password must be at least 7 characters.', category='error')
         # if there are no admins, the user will be made an admin
         elif User.query.filter_by(isAdmin=True).first() == None:
-            new_user = User(email=email, first_name=first_name, last_name=last_name ,password=generate_password_hash(password1, method='sha256'), isAdmin=True)
+            new_user = User(email=email, first_name=first_name, last_name=last_name ,password=generate_password_hash(password1, method='pbkdf2:sha256'), isAdmin=True)
             db.session.add(new_user)
             db.session.commit()
             user = User.query.filter_by(email=email).first()
@@ -151,7 +151,7 @@ def sign_up():
             return redirect(url_for('views.home'))
         # else the user will be created but not an admin
         else:
-            new_user = User(email=email, first_name=first_name, last_name=last_name ,password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, first_name=first_name, last_name=last_name ,password=generate_password_hash(password1, method='pbkdf2:sha256'))
             db.session.add(new_user)
             db.session.commit()
             user = User.query.filter_by(email=email).first()
