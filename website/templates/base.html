@@ -26,11 +26,6 @@
   </head>
 
   <body>
-    <script>
-      document.getElementById('logoutconfirm').addEventListener('click', function () {
-        window.location.href = '/logout';
-      });
-    </script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
@@ -62,7 +57,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                    Confirm Deletion
+                    Confirm Logout
                   </h1>
                   <button
                     type="button"
@@ -81,7 +76,7 @@
                   <button
                     type="button"
                     class="btn btn-primary"
-                    id="logoutconfirm">
+                    onclick="href='/logout'">
                     Confirm
                   </button>
                 </div>
