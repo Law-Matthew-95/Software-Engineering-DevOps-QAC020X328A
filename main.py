@@ -1,5 +1,7 @@
 from website import create_app
+from secure import SecureHeaders
 
+secure_headers = SecureHeaders()
 app = create_app()
 
 @app.after_request
