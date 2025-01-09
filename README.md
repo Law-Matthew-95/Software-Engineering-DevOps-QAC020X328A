@@ -1,4 +1,4 @@
-### SoftwareEngineering-Agile_Assignment-QAC020N227S-
+### Software Engineering & DevOps (QAC020X328A)
 
 This application uses the Flask environment with the python language and a SQLite database to create a simple ticket system which features Logging in, signing up, ticket creation, ticket editing, ticket deletion, Admin upgrading, logout, and user deletion.
 
