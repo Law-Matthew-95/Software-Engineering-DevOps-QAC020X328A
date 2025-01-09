@@ -42,18 +42,26 @@ def logout():
 @auth.route('/users')
 @login_required
 def users():
-    # it will query all the users from the database
-    users = User.query.all()
-    return render_template("users.html", user=current_user, users=users)
+    if User.isAdmin :
+        # it will query all the users from the database
+        users = User.query.all()
+        return render_template("users.html", user=current_user, users=users)
+    else: 
+        flash('You are not authorized to access this page!', category='error')
+        return redirect(url_for('views.home'))
 
 # intercepts the request when the user clicks the all tickets button
 @auth.route('/all-tickets')
 @login_required
 def alltickets():
-    # it will query all the tickets from the database
-    tickets = Ticket.query.all()
-    return render_template("all_tickets.html", user=current_user, tickets=tickets)
-
+    if User.isAdmin :
+        # it will query all the tickets from the database
+        tickets = Ticket.query.all()
+        return render_template("all_tickets.html", user=current_user, tickets=tickets)
+    else: 
+        flash('You are not authorized to access this page!', category='error')
+        return redirect(url_for('views.home'))
+    
 # intercepts the request when the user clicks the edit ticket button
 @auth.route('/edit-ticket', methods=['POST'])
 @login_required
