@@ -42,9 +42,7 @@ def logout():
 @auth.route('/users')
 @login_required
 def users():
-    email = request.form.get('email')
-    user = User.query.filter_by(email=email).first()
-    if user.isAdmin :
+    if current_user.isAdmin:
         # it will query all the users from the database
         users = User.query.all()
         return render_template("users.html", user=current_user, users=users)
@@ -56,9 +54,7 @@ def users():
 @auth.route('/all-tickets')
 @login_required
 def alltickets():
-    email = request.form.get('email')
-    user = User.query.filter_by(email=email).first()
-    if user.isAdmin :
+    if current_user.isAdmin:
         # it will query all the tickets from the database
         tickets = Ticket.query.all()
         return render_template("all_tickets.html", user=current_user, tickets=tickets)
